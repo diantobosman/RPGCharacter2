@@ -10,11 +10,11 @@ public class Main {
         int[] RangeInitial = new int[]{1,7,1};
 
         mage.setPrimaryAttributes(MageInitial);
-        System.out.println(mage.getPrimaryAttributes()[1]);
+        System.out.println(mage.getPrimaryAttributes()[0]);
 
         mage.levelUp();
         System.out.println(mage.getLevel());
-
+        System.out.println(mage.getPrimaryAttributes()[0]);
     }
 
 
