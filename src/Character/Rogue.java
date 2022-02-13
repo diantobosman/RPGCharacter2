@@ -1,7 +1,7 @@
 package Character;
 
 public class Rogue extends Character{
-    public Rogue(int level) {
-        super(level);
+    public Rogue(String name, int level) {
+        super(name, level);
     }
 }

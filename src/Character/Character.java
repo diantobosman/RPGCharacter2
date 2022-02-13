@@ -1,27 +1,21 @@
 package Character;
 
 public abstract class Character {
+    protected String name;
     protected int level;
+    protected int[] PrimaryAttributes;
+    protected int TotalPrimaryAttributes;
 
-    public Character(int level) {
+    public Character(String name, int level) {
+        this.name = name;
         this.level = level;
     }
 
-
-    // Getters
-    public int getLevel() {
-        return level;
+    public int[] getPrimaryAttributes() {
+        return PrimaryAttributes;
     }
 
-    //Setters
-    public void setLevel(int level) {
-        this.level = level;
+    public void setPrimaryAttributes(int[] primaryAttributes) {
+        PrimaryAttributes = primaryAttributes;
     }
-
-    // LevelUp function
-    public void mageLevelUp() {
-        this.level = level + 1;
-        System.out.println("The new level is:" + level);
-    }
-
 }

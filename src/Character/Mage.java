@@ -1,7 +1,8 @@
 package Character;
 
 public class Mage extends Character {
-    public Mage(int level) {
-        super(level);
+    public Mage(String name, int level) {
+        super(name, level);
     }
+
 }

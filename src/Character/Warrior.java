@@ -1,7 +1,7 @@
 package Character;
 
 public class Warrior extends Character{
-    public Warrior(int level) {
-        super(level);
+    public Warrior(String name, int level) {
+        super(name, level);
     }
 }
