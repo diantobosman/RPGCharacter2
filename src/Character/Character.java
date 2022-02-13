@@ -6,7 +6,7 @@ public abstract class Character {
     protected int[] PrimaryAttributes;
     protected int TotalPrimaryAttributes;
 
-    public Character(String name, int level) {
+    public Character(String name, int level, int TotalPrimaryAttributes) {
         this.name = name;
         this.level = level;
     }

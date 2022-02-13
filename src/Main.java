@@ -2,7 +2,7 @@ import Character.*;
 
 public class Main {
     public static void main(String[] args) {
-        Mage mage = new Mage("Mage", 1);
+        Mage mage = new Mage("Mage", 1, 7);
 
         int[] MageInitial = new int[]{1,1,8};
         int[] RogueInitial = new int[]{2,6,1};
