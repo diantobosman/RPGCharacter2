@@ -26,4 +26,22 @@ public abstract class Character {
     public void setTotalPrimaryAttributes(int totalPrimaryAttributes) {
         TotalPrimaryAttributes = totalPrimaryAttributes;
     }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
+
+
+
+    // Functions
+
+    public void levelUp() {
+        this.level = level + 1;
+    }
+
+
 }
