@@ -18,4 +18,12 @@ public abstract class Character {
     public void setPrimaryAttributes(int[] primaryAttributes) {
         PrimaryAttributes = primaryAttributes;
     }
+
+    public int getTotalPrimaryAttributes() {
+        return TotalPrimaryAttributes;
+    }
+
+    public void setTotalPrimaryAttributes(int totalPrimaryAttributes) {
+        TotalPrimaryAttributes = totalPrimaryAttributes;
+    }
 }
