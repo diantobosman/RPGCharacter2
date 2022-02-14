@@ -5,9 +5,6 @@ public class Ranger extends Character{
         super(name, level, TotalPrimaryAttributes);
     }
 
-    int[] rangerInitial = new int[]{1,1,8};
-    PrimaryAttributes obj = new PrimaryAttributes(rangerInitial);
-
     @Override
     public void levelUp() {
         super.levelUp();
