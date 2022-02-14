@@ -4,6 +4,7 @@ public abstract class Character {
     protected String name;
     protected int level;
     protected int totalPrimaryAttributes;
+    protected int[] primaryAttribute;
 
     public Character(String name, int level, int TotalPrimaryAttributes) {
         this.name = name;
@@ -35,10 +36,10 @@ public abstract class Character {
     // initialize the Primaryattributes
     public void initialize(int[] initial) {
         PrimaryAttributes obj = new PrimaryAttributes(initial);
+        this.primaryAttribute = PrimaryAttributes.getPrimaryAttribute();
     }
 
     public int[] getAttributes() {
-        return PrimaryAttributes.getPrimaryAttribute();
+        return primaryAttribute;
     }
-
 }

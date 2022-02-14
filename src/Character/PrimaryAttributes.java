@@ -3,10 +3,13 @@ package Character;
 public class PrimaryAttributes {
     static int[] primaryAttribute;
 
-    public PrimaryAttributes(int[] mageInitial) {
-        primaryAttribute = mageInitial;
+    public PrimaryAttributes(int[] initial) {
+        primaryAttribute = initial;
     }
 
+
+
+    // Getters and setters
     public static int[] getPrimaryAttribute() {
         return primaryAttribute;
     }
