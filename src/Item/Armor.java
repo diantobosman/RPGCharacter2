@@ -2,7 +2,7 @@ package Item;
 
 
 public class Armor extends Item{
-    enum armorType{Cloth, Leather, Mail, Plate}
+    public enum armorType{Cloth, Leather, Mail, Plate}
 
 
 
