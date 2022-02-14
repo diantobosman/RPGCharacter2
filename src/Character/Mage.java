@@ -1,8 +1,12 @@
 package Character;
 
 public class Mage extends Character {
-    public Mage(String name, int level, int TotalPrimaryAttributes) {
-        super(name, level, TotalPrimaryAttributes);
+
+    public Mage() {
+        super.name = "Mage";
+        int[] mageInitial = new int[]{1,1,8};
+        initialize(mageInitial);
+        super.totalPrimaryAttributes = 10;
     }
 
     @Override

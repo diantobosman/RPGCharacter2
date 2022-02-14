@@ -1,8 +1,12 @@
 package Character;
 
 public class Warrior extends Character{
-    public Warrior(String name, int level, int TotalPrimaryAttributes) {
-        super(name, level, TotalPrimaryAttributes);
+
+    public Warrior() {
+        super.name = "Warrior";
+        int[] warriorInitial = new int[]{5,2,1};
+        initialize(warriorInitial);
+        super.totalPrimaryAttributes = 8;
     }
 
     @Override

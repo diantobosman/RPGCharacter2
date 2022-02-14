@@ -1,8 +1,12 @@
 package Character;
 
 public class Ranger extends Character{
-    public Ranger(String name, int level, int TotalPrimaryAttributes) {
-        super(name, level, TotalPrimaryAttributes);
+
+    public Ranger() {
+        super.name = "Ranger";
+        int[] rangerInitial = new int[]{1,7,1};
+        initialize(rangerInitial);
+        super.totalPrimaryAttributes = 9;
     }
 
     @Override
