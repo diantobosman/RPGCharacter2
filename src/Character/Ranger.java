@@ -5,7 +5,6 @@ public class Ranger extends Character{
         super(name, level, TotalPrimaryAttributes);
     }
 
-
     @Override
     public void levelUp() {
         super.levelUp();
