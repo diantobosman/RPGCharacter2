@@ -1,8 +1,5 @@
 package Item;
 
-
-
-
 public class Item {
     protected String ItemName;
     protected int RequiredLevel;
@@ -13,4 +10,11 @@ public class Item {
         this.RequiredLevel = RequiredLevel;
         this.slot = slot;
     }
+
+
+
+
+
+
+
 }

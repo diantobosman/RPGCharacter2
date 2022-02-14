@@ -5,13 +5,11 @@ public class Rogue extends Character{
         super(name, level, TotalPrimaryAttributes);
     }
 
+    int[] rogueInitial = new int[]{1,1,8};
+    PrimaryAttributes obj = new PrimaryAttributes(rogueInitial);
 
     @Override
     public void levelUp() {
         super.levelUp();
-        PrimaryAttributes[0] = PrimaryAttributes[0] + 3;
-        PrimaryAttributes[1] = PrimaryAttributes[1] + 2;
-        PrimaryAttributes[2] = PrimaryAttributes[2] + 1;
-        TotalPrimaryAttributes = TotalPrimaryAttributes + 6;
     }
 }
