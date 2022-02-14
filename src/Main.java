@@ -1,4 +1,5 @@
 import Character.*;
+import Item.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -18,6 +19,10 @@ public class Main {
         System.out.println("The new level of the mage is: " + mage.getLevel());
         System.out.println("The strength of the mage is now: " + mage.getPrimaryAttributes()[0]);
         System.out.println("The strength of the warrior is now: " + warrior.getPrimaryAttributes()[0]);
+
+        Item itemnew = new Item("axe",1,1);
+
+
 
     }
 }

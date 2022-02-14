@@ -1,6 +1,9 @@
 package Item;
 
-public abstract class Item {
+
+
+
+public class Item {
     protected String ItemName;
     protected int RequiredLevel;
     protected int slot; //maybe int[] here?
