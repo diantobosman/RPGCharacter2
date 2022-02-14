@@ -2,29 +2,29 @@ package Character;
 
 public abstract class Character {
     protected String name;
-    protected int level;
-    protected int[] PrimaryAttributes;
-    protected int TotalPrimaryAttributes;
+    protected int level = 1;
+    protected int totalPrimaryAttributes;
+    protected int[] primaryAttribute;
 
-    public Character(String name, int level, int TotalPrimaryAttributes) {
+    public Character() {
+        ;
+
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
         this.name = name;
-        this.level = level;
-    }
-
-    public int[] getPrimaryAttributes() {
-        return PrimaryAttributes;
-    }
-
-    public void setPrimaryAttributes(int[] primaryAttributes) {
-        PrimaryAttributes = primaryAttributes;
     }
 
     public int getTotalPrimaryAttributes() {
-        return TotalPrimaryAttributes;
+        return totalPrimaryAttributes;
     }
 
     public void setTotalPrimaryAttributes(int totalPrimaryAttributes) {
-        TotalPrimaryAttributes = totalPrimaryAttributes;
+        totalPrimaryAttributes = totalPrimaryAttributes;
     }
 
     public int getLevel() {
@@ -38,10 +38,18 @@ public abstract class Character {
 
 
     // Functions
-
     public void levelUp() {
         this.level = level + 1;
     }
 
+    // initialize the Primaryattributes
+    public void initialize(int[] initial) {
+        PrimaryAttributes obj = new PrimaryAttributes(initial);
+        this.primaryAttribute = PrimaryAttributes.getPrimaryAttribute();
+    }
+
+    public int[] getAttributes() {
+        return primaryAttribute;
+    }
 
 }

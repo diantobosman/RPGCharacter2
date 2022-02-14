@@ -1,17 +1,20 @@
 package Character;
 
 public class Rogue extends Character{
-    public Rogue(String name, int level, int TotalPrimaryAttributes) {
-        super(name, level, TotalPrimaryAttributes);
-    }
 
+    public Rogue() {
+        super.name = "Rogue";
+        int[] rogueInitial = new int[]{2,6,1};
+        initialize(rogueInitial);
+        super.totalPrimaryAttributes = 7;
+    }
 
     @Override
     public void levelUp() {
         super.levelUp();
-        PrimaryAttributes[0] = PrimaryAttributes[0] + 3;
-        PrimaryAttributes[1] = PrimaryAttributes[1] + 2;
-        PrimaryAttributes[2] = PrimaryAttributes[2] + 1;
-        TotalPrimaryAttributes = TotalPrimaryAttributes + 6;
+        super.primaryAttribute[0] = super.primaryAttribute[0] + 1;
+        super.primaryAttribute[1] = super.primaryAttribute[1] + 4;
+        super.primaryAttribute[2] = super.primaryAttribute[2] + 1;
+        super.totalPrimaryAttributes = super.totalPrimaryAttributes + 6;
     }
 }

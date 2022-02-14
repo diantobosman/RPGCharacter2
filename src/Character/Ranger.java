@@ -1,16 +1,20 @@
 package Character;
 
 public class Ranger extends Character{
-    public Ranger(String name, int level, int TotalPrimaryAttributes) {
-        super(name, level, TotalPrimaryAttributes);
+
+    public Ranger() {
+        super.name = "Ranger";
+        int[] rangerInitial = new int[]{1,7,1};
+        initialize(rangerInitial);
+        super.totalPrimaryAttributes = 9;
     }
 
     @Override
     public void levelUp() {
         super.levelUp();
-        PrimaryAttributes[0] = PrimaryAttributes[0] + 1;
-        PrimaryAttributes[1] = PrimaryAttributes[1] + 5;
-        PrimaryAttributes[2] = PrimaryAttributes[2] + 1;
-        TotalPrimaryAttributes = TotalPrimaryAttributes + 7;
+        super.primaryAttribute[0] = super.primaryAttribute[0] + 1;
+        super.primaryAttribute[1] = super.primaryAttribute[1] + 5;
+        super.primaryAttribute[2] = super.primaryAttribute[2] + 1;
+        super.totalPrimaryAttributes = super.totalPrimaryAttributes + 7;
     }
 }

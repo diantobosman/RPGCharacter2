@@ -1,13 +1,33 @@
 package Item;
 
 public abstract class Item {
-    protected String ItemName;
-    protected int RequiredLevel;
+    protected String itemName;
+    protected int requiredLevel;
     protected int slot; //maybe int[] here?
 
-    public Item(String ItemName, int RequiredLevel, int slot){
-        this.ItemName = ItemName;
-        this.RequiredLevel = RequiredLevel;
+
+    // Getters and setters
+    public String getItemName() {
+        return itemName;
+    }
+
+    public void setItemName(String itemName) {
+        this.itemName = itemName;
+    }
+
+    public int getRequiredLevel() {
+        return requiredLevel;
+    }
+
+    public void setRequiredLevel(int requiredLevel) {
+        this.requiredLevel = requiredLevel;
+    }
+
+    public int getSlot() {
+        return slot;
+    }
+
+    public void setSlot(int slot) {
         this.slot = slot;
     }
 }
