@@ -24,16 +24,18 @@ public class Weapons extends Item {
         this.damage = damage;
     }
 
+
+    public int GiveTotalDamage(int speed, int damage, int totalAttributes) {
+        this.speed = speed;
+        this.damage = damage;
+        int DPS = GiveDamage(this.speed, this.damage);
+        int TotalDamage = DPS * (1 + totalAttributes/100);
+        return TotalDamage;
+    }
+
     public int GiveDamage(int speed, int damage) {
         int DPS = this.damage * this.speed;
         return DPS;
-    }
-
-    public int GiveTotalDamage(int speed, int damage, int totalAttributes) {
-        int DPS = GiveDamage(this.speed, this.damage);
-
-        int TotalDamage = DPS * (1 + totalAttributes/100);
-        return TotalDamage;
     }
 
     public void checkWeaponSlot() {

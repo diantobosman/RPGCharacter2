@@ -1,11 +1,14 @@
 package Character;
-
-
 import PrimaryAttributes.PrimaryAttributes;
 import java.util.HashMap;
 import Item.Weapons;
 import Item.Item;
 import Item.Armor;
+
+import java.util.List;
+import java.util.Arrays;
+
+
 
 public abstract class Character {
     protected String name;
@@ -32,7 +35,15 @@ public abstract class Character {
         return totalPrimaryAttributes;
     }
 
+    public List<Object> CharacterStatsDisplay() {
+        String name = this.name;
+        int characterLevel = this.level;
+        int strength = this.primaryAttribute[0];
+        int dexterity = this.primaryAttribute[1];
+        int intelligence = this.primaryAttribute[2];
 
+        return Arrays.asList(name, characterLevel, strength, dexterity, intelligence);
+    }
 
 
     public int getLevel() {

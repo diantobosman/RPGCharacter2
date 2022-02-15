@@ -16,8 +16,16 @@ public class Main {
         Armor Item = new Armor("Tank", 2, mage.getLevel(), Armor.ArmorType.Leather);
 
 
-        axes.GiveTotalDamage(1,1, Integer.parseInt((Item.getPrimaryAttributesArmor() + mage.getTotalPrimaryAttributes())));
+        int totalAttr = Item.getTotalArmorAttributes() + mage.getTotalPrimaryAttributes();
+        int test = axes.GiveTotalDamage(3, 1, totalAttr);
+        System.out.println("TEST: " + totalAttr);
+        System.out.println("TEST: " + test);
+
     }
 }
+
+
+
+
 
 
