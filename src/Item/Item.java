@@ -4,14 +4,15 @@ public abstract class Item {
     // Fields
     protected String itemName;
     protected int requiredLevel;
-    protected int slot; //maybe int[] here?
+    protected int level;
 
     // Constructor
-    public Item(String itemName, int requiredLevel, int slot) {
+    public Item(String itemName, int requiredLevel, int level) {
         this.itemName = itemName;
         this.requiredLevel = requiredLevel;
-        this.slot = slot;
+        this.level = level;
     }
+
 
     // Getters and setters
     public String getItemName() {
@@ -30,11 +31,5 @@ public abstract class Item {
         this.requiredLevel = requiredLevel;
     }
 
-    public int getSlot() {
-        return slot;
-    }
 
-    public void setSlot(int slot) {
-        this.slot = slot;
-    }
 }

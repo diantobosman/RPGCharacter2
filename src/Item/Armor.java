@@ -6,8 +6,8 @@ public class Armor extends Item{
     private armorType armorType;
 
     // Constructor
-    public Armor(String itemName, int requiredLevel, int slot, armorType armorType) {
-        super(itemName, requiredLevel, slot);
+    public Armor(String itemName, int requiredLevel, int level, armorType armorType) {
+        super(itemName, requiredLevel, level);
         this.armorType = armorType;
     }
 
