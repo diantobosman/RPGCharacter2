@@ -11,6 +11,12 @@ public class Weapons extends Item {
         this.speed = speed;
     }
 
+    // Function to give damage
+    public int GiveDamage(int damage) {
+        int DPS = damage * this.speed;
+        return DPS;
+    }
+
     //Setters and Getters
     public int getSpeed() {
         return speed;
