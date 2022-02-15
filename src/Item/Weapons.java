@@ -1,12 +1,25 @@
 package Item;
 
-
 public class Weapons extends Item {
-    public Weapons(String itemName, int requiredLevel, int slot) {
+    private WeaponType wType;
+    private int speed;
+
+
+    public Weapons(String itemName, int requiredLevel, int slot, WeaponType wType, int speed) {
         super(itemName, requiredLevel, slot);
+        this.wType = wType;
+        this.speed = speed;
     }
 
-    public enum weaponType {Axes, Bows, Daggers, Hammers, Staffs, Swords, Wands}
+    //Setters and Getters
+    public int getSpeed() {
+        return speed;
+    }
 
+    public void setSpeed(int speed) {
+        this.speed = speed;
+    }
+
+    public enum WeaponType {Axes, Bows, Daggers, Hammers, Staffs, Swords, Wands}
 }
 
