@@ -7,10 +7,12 @@ public class Weapons extends Item {
     private int damage;
 
     // Constructor
-    public Weapons(String itemName, int requiredLevel, int slot, WeaponType wType, int speed) {
-        super(itemName, requiredLevel, slot);
+    public Weapons(String itemName, int requiredLevel, int level, WeaponType wType, int speed) {
+        super(itemName, requiredLevel, level);
         this.wType = wType;
         this.speed = speed;
+
+        checkWeaponSlot();
     }
 
     // Functions
@@ -27,11 +29,38 @@ public class Weapons extends Item {
         return DPS;
     }
 
+    public void checkWeaponSlot() {
+        if (this.wType == WeaponType.Axes || this.wType == WeaponType.Bows || this.wType == WeaponType.Daggers || this.wType != WeaponType.Hammers) {
+            if (this.wType == WeaponType.Axes && this.requiredLevel > super.level) {
+                InvalidWeaponException();
+            }
+
+            else if (this.wType == WeaponType.Bows && this.requiredLevel > super.level) {
+                InvalidWeaponException();
+            }
+
+            else if (this.wType == WeaponType.Daggers && this.requiredLevel > super.level) {
+                InvalidWeaponException();
+            }
+
+            else if (this.wType == WeaponType.Hammers && this.requiredLevel > super.level) {
+                InvalidWeaponException();
+            }
+         else {
+             System.out.println("The weapon that you picked is allowed");
+            }
+        }
+    }
+
+    public void InvalidWeaponException(){
+        System.out.println("InvalidWeaponException");
+    }
 
     //Setters and Getters
     public int getSpeed() {
         return this.speed;
     }
+
 
     // Enumerator to create the different weapontypes
     public enum WeaponType {Axes, Bows, Daggers, Hammers, Staffs, Swords, Wands}

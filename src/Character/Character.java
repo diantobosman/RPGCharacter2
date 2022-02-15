@@ -11,16 +11,13 @@ public abstract class Character {
     protected int level = 1;
     protected int totalPrimaryAttributes;
     protected int[] primaryAttribute;
-
     protected HashMap<bodySlot, Item> equipment;
-
 
 
     public Character() {
 
         ;
     }
-
 
 
     public String getName() {
@@ -48,11 +45,11 @@ public abstract class Character {
     }
 
 
-
     // Functions
     public void levelUp() {
         this.level = level + 1;
     }
+
 
     // initialize the Primaryattributes
     public void initialize(int[] initial) {
