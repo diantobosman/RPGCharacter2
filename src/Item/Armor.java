@@ -6,8 +6,9 @@ public class Armor extends Item{
     private armorType armorType;
 
     // Constructor
-    public Armor(String itemName, int requiredLevel, int slot) {
+    public Armor(String itemName, int requiredLevel, int slot, armorType armorType) {
         super(itemName, requiredLevel, slot);
+        this.armorType = armorType;
     }
 
     //Create enum class with the types of armor

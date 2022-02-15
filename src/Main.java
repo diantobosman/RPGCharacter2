@@ -1,4 +1,5 @@
 import Character.*;
+import Item.Armor;
 import Item.Weapons;
 import Item.Weapons.*;
 import java.util.HashMap;
@@ -12,7 +13,7 @@ public class Main {
         System.out.println(mage.getAttributes()[0]);
 
         Weapons axes = new Weapons("Axe", 1, 2, WeaponType.Axes,1);
-
+        Armor Item = new Armor("Tank",2,1, Armor.armorType.Leather);
 
 
 
