@@ -2,7 +2,7 @@ package Item;
 
 public class Armor extends Item{
     // Fields
-    private String primaryAttributes;
+    public String primaryAttributesArmor;
     private ArmorType armorType;
 
     // Constructor
@@ -42,19 +42,16 @@ public class Armor extends Item{
     }
 
 
-
-
-
     //Create enum class with the types of armo
     public enum ArmorType{Cloth, Leather, Mail, Plate}
 
     // Getters and Setters
-    public String getPrimaryAttributes() {
-        return primaryAttributes;
+    public String getPrimaryAttributesArmor() {
+        return primaryAttributesArmor;
     }
 
     public void setPrimaryAttributes(String attributes) {
-        this.primaryAttributes = attributes;
+        this.primaryAttributesArmor = attributes;
     }
 
 

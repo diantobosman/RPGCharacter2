@@ -5,6 +5,7 @@ import PrimaryAttributes.PrimaryAttributes;
 import java.util.HashMap;
 import Item.Weapons;
 import Item.Item;
+import Item.Armor;
 
 public abstract class Character {
     protected String name;
@@ -12,7 +13,6 @@ public abstract class Character {
     protected int totalPrimaryAttributes;
     protected int[] primaryAttribute;
     protected HashMap<bodySlot, Item> equipment;
-
 
     public Character() {
 
@@ -32,9 +32,8 @@ public abstract class Character {
         return totalPrimaryAttributes;
     }
 
-    public void setTotalPrimaryAttributes(int totalPrimaryAttributes) {
-        totalPrimaryAttributes = totalPrimaryAttributes;
-    }
+
+
 
     public int getLevel() {
         return level;

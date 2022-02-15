@@ -29,6 +29,13 @@ public class Weapons extends Item {
         return DPS;
     }
 
+    public int GiveTotalDamage(int speed, int damage, int totalAttributes) {
+        int DPS = GiveDamage(this.speed, this.damage);
+
+        int TotalDamage = DPS * (1 + totalAttributes/100);
+        return TotalDamage;
+    }
+
     public void checkWeaponSlot() {
         if (this.wType == WeaponType.Axes || this.wType == WeaponType.Bows || this.wType == WeaponType.Daggers || this.wType != WeaponType.Hammers) {
             if (this.wType == WeaponType.Axes && this.requiredLevel > super.level) {

@@ -1,6 +1,6 @@
 package Item;
 
-public abstract class Item {
+public abstract class Item{
     // Fields
     protected String itemName;
     protected int requiredLevel;
