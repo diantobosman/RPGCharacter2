@@ -4,6 +4,7 @@ public class Weapons extends Item {
     // Fields
     private WeaponType wType;
     private int speed;
+    private int damage;
 
     // Constructor
     public Weapons(String itemName, int requiredLevel, int slot, WeaponType wType, int speed) {
@@ -13,21 +14,25 @@ public class Weapons extends Item {
     }
 
     // Functions
-    public int GiveDamage(int damage) {
-        int DPS = damage * this.speed;
-        return DPS;
-    }
-
     public void setSpeed(int speed) {
         this.speed = speed;
     }
 
+    public void setDamage(int damage) {
+        this.damage = damage;
+    }
+
+    public int GiveDamage(int speed, int damage) {
+        int DPS = this.damage * this.speed;
+        return DPS;
+    }
+
+
     //Setters and Getters
     public int getSpeed() {
-        return speed;
+        return this.speed;
     }
 
     // Enumerator to create the different weapontypes
     public enum WeaponType {Axes, Bows, Daggers, Hammers, Staffs, Swords, Wands}
 }
-

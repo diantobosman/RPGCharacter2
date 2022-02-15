@@ -1,6 +1,10 @@
 package Character;
 
+
 import PrimaryAttributes.PrimaryAttributes;
+import java.util.HashMap;
+import Item.Weapons;
+import Item.Item;
 
 public abstract class Character {
     protected String name;
@@ -8,10 +12,16 @@ public abstract class Character {
     protected int totalPrimaryAttributes;
     protected int[] primaryAttribute;
 
-    public Character() {
-        ;
+    protected HashMap<bodySlot, Item> equipment;
 
+
+
+    public Character() {
+
+        ;
     }
+
+
 
     public String getName() {
         return name;
@@ -53,5 +63,9 @@ public abstract class Character {
     public int[] getAttributes() {
         return primaryAttribute;
     }
+
+
+    enum bodySlot {Head, Body, Legs, Weapon}
+
 
 }
