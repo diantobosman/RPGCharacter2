@@ -1,4 +1,4 @@
-package Character;
+package PrimaryAttributes;
 
 public class PrimaryAttributes {
     static int[] primaryAttribute;
@@ -6,7 +6,6 @@ public class PrimaryAttributes {
     public PrimaryAttributes(int[] initial) {
         primaryAttribute = initial;
     }
-
 
 
     // Getters and setters

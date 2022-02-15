@@ -1,5 +1,7 @@
 package Character;
 
+import PrimaryAttributes.PrimaryAttributes;
+
 public abstract class Character {
     protected String name;
     protected int level = 1;

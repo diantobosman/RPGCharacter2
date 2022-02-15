@@ -6,6 +6,14 @@ public abstract class Item {
     protected int slot; //maybe int[] here?
 
 
+    // Constructor
+    public Item(String itemName, int requiredLevel, int slot) {
+        this.itemName = itemName;
+        this.requiredLevel = requiredLevel;
+        this.slot = slot;
+    }
+
+
     // Getters and setters
     public String getItemName() {
         return itemName;
