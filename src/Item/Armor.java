@@ -16,11 +16,13 @@ public class Armor extends Item{
         checkArmorSlot();
     }
 
+    // Methods
     public void putArmorOn() {
         // Assumed that the armor increases the attributes with 5.
         this.totalArmorAttributes = 5;
     }
 
+    // Check if the name is available and also check if the level of the character is high enough
     public void checkArmorSlot() {
         if (this.armorType == ArmorType.Cloth || this.armorType == ArmorType.Leather || this.armorType == ArmorType.Mail || this.armorType != ArmorType.Plate) {
             if (this.armorType == ArmorType.Cloth && this.requiredLevel >= super.level) {
@@ -35,9 +37,6 @@ public class Armor extends Item{
                 InvalidArmorException();
             }
 
-            else if (this.armorType == ArmorType.Plate && this.requiredLevel >= super.level) {
-                InvalidArmorException();
-            }
             else {
                 System.out.println("The weapon that you picked is allowed");
             }
@@ -68,7 +67,6 @@ public class Armor extends Item{
     public void setPrimaryAttributes(String attributes) {
         this.primaryAttributesArmor = attributes;
     }
-
 
     public ArmorType getArmorType() {
         return armorType;

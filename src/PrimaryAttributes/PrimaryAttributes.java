@@ -1,7 +1,7 @@
 package PrimaryAttributes;
 
 public class PrimaryAttributes {
-    static int[] primaryAttribute;
+    public static int[] primaryAttribute;
 
     public PrimaryAttributes(int[] initial) {
         primaryAttribute = initial;
@@ -13,7 +13,7 @@ public class PrimaryAttributes {
         return primaryAttribute;
     }
 
-    public static void setPrimaryAttribute(int[] primaryAttribute) {
+    public void setPrimaryAttribute(int[] primaryAttribute) {
         PrimaryAttributes.primaryAttribute = primaryAttribute;
     }
 }

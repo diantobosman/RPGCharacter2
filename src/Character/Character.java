@@ -1,16 +1,13 @@
 package Character;
 import PrimaryAttributes.PrimaryAttributes;
 import java.util.HashMap;
-import Item.Weapons;
 import Item.Item;
-import Item.Armor;
 
 import java.util.List;
 import java.util.Arrays;
 
-
-
 public abstract class Character {
+    // Fields
     protected String name;
     protected int level = 1;
     protected int totalPrimaryAttributes;
@@ -18,10 +15,45 @@ public abstract class Character {
     protected HashMap<bodySlot, Item> equipment;
 
     public Character() {
-
-        ;
     }
 
+    // Methods //
+    public void levelUp() {
+        this.level = level + 1;
+    }
+
+    // initialize the Primaryattributes
+    public void initialize(int[] initial) {
+        PrimaryAttributes obj = new PrimaryAttributes(initial);
+        this.primaryAttribute = PrimaryAttributes.getPrimaryAttribute();
+    }
+
+    public int[] getAttributes() {
+        return primaryAttribute;
+    }
+
+    // Get list with properties
+    public List<Object> CharacterStatsDisplay() {
+        String name = this.name;
+        int characterLevel = this.level;
+        int strength = this.primaryAttribute[0];
+        int dexterity = this.primaryAttribute[1];
+        int intelligence = this.primaryAttribute[2];
+
+        return Arrays.asList(name, characterLevel, strength, dexterity, intelligence);
+    }
+
+    // Created for the four slots
+    enum bodySlot {Head, Body, Legs, Weapon}
+
+    // Getters and Setters
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
 
     public String getName() {
         return name;
@@ -35,44 +67,7 @@ public abstract class Character {
         return totalPrimaryAttributes;
     }
 
-    public List<Object> CharacterStatsDisplay() {
-        String name = this.name;
-        int characterLevel = this.level;
-        int strength = this.primaryAttribute[0];
-        int dexterity = this.primaryAttribute[1];
-        int intelligence = this.primaryAttribute[2];
-
-        return Arrays.asList(name, characterLevel, strength, dexterity, intelligence);
+    public void setTotalPrimaryAttributes(int totalPrimaryAttributes) {
+        this.totalPrimaryAttributes = totalPrimaryAttributes;
     }
-
-
-    public int getLevel() {
-        return level;
-    }
-
-    public void setLevel(int level) {
-        this.level = level;
-    }
-
-
-    // Functions
-    public void levelUp() {
-        this.level = level + 1;
-    }
-
-
-    // initialize the Primaryattributes
-    public void initialize(int[] initial) {
-        PrimaryAttributes obj = new PrimaryAttributes(initial);
-        this.primaryAttribute = PrimaryAttributes.getPrimaryAttribute();
-    }
-
-    public int[] getAttributes() {
-        return primaryAttribute;
-    }
-
-
-    enum bodySlot {Head, Body, Legs, Weapon}
-
-
 }

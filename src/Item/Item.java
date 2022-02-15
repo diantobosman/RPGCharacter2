@@ -13,7 +13,6 @@ public abstract class Item{
         this.level = level;
     }
 
-
     // Getters and setters
     public String getItemName() {
         return itemName;
@@ -31,5 +30,11 @@ public abstract class Item{
         this.requiredLevel = requiredLevel;
     }
 
+    public int getLevel() {
+        return level;
+    }
 
+    public void setLevel(int level) {
+        this.level = level;
+    }
 }

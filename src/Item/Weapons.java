@@ -2,7 +2,7 @@ package Item;
 
 public class Weapons extends Item {
     // Fields
-    private WeaponType wType;
+    private final WeaponType wType;
     private int speed;
     private int damage;
 
@@ -15,29 +15,20 @@ public class Weapons extends Item {
         checkWeaponSlot();
     }
 
-    // Functions
-    public void setSpeed(int speed) {
-        this.speed = speed;
-    }
-
-    public void setDamage(int damage) {
-        this.damage = damage;
-    }
-
-
+    // Methods //
+    // Calculate the total damage
     public int GiveTotalDamage(int speed, int damage, int totalAttributes) {
         this.speed = speed;
         this.damage = damage;
         int DPS = GiveDamage(this.speed, this.damage);
-        int TotalDamage = DPS * (1 + totalAttributes/100);
-        return TotalDamage;
+        return DPS * (1 + totalAttributes/100);
     }
 
     public int GiveDamage(int speed, int damage) {
-        int DPS = this.damage * this.speed;
-        return DPS;
+        return this.damage * this.speed;
     }
 
+    // Check if the name is available and also check if the level of the character is high enough
     public void checkWeaponSlot() {
         if (this.wType == WeaponType.Axes || this.wType == WeaponType.Bows || this.wType == WeaponType.Daggers || this.wType != WeaponType.Hammers) {
             if (this.wType == WeaponType.Axes && this.requiredLevel > super.level) {
@@ -52,22 +43,14 @@ public class Weapons extends Item {
                 InvalidWeaponException();
             }
 
-            else if (this.wType == WeaponType.Hammers && this.requiredLevel > super.level) {
-                InvalidWeaponException();
-            }
-         else {
-             System.out.println("The weapon that you picked is allowed");
+            else {
+                System.out.println("The weapon that you picked is allowed");
             }
         }
     }
 
     public void InvalidWeaponException(){
         System.out.println("InvalidWeaponException");
-    }
-
-    //Setters and Getters
-    public int getSpeed() {
-        return this.speed;
     }
 
 
