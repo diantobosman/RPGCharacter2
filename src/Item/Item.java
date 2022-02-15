@@ -1,10 +1,10 @@
 package Item;
 
 public abstract class Item {
+    // Fields
     protected String itemName;
     protected int requiredLevel;
     protected int slot; //maybe int[] here?
-
 
     // Constructor
     public Item(String itemName, int requiredLevel, int slot) {
@@ -12,7 +12,6 @@ public abstract class Item {
         this.requiredLevel = requiredLevel;
         this.slot = slot;
     }
-
 
     // Getters and setters
     public String getItemName() {

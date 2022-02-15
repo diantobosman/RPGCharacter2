@@ -14,7 +14,6 @@ public class Armor extends Item{
     //Create enum class with the types of armor
     public enum armorType{Cloth, Leather, Mail, Plate}
 
-
     // Getters and Setters
     public String getPrimaryAttributes() {
         return primaryAttributes;
