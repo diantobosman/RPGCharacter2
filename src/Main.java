@@ -13,7 +13,7 @@ public class Main {
         System.out.println(mage.getAttributes()[0]);
 
         Weapons axes = new Weapons("Axe", 2, mage.getLevel(), WeaponType.Axes, 1);
-        Armor Item = new Armor("Tank", 2, mage.getLevel(), Armor.armorType.Leather);
+        Armor Item = new Armor("Tank", 2, mage.getLevel(), Armor.ArmorType.Leather);
 
 
     }
