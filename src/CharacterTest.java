@@ -9,7 +9,6 @@ public class CharacterTest {
     }
 
     public static void PickCharacter() {
-
         System.out.println("Please type the character that you would like to creat: MAGE, RANGER, ROGUE, WARRIOR");
 
         Scanner scanner = new Scanner(System.in);
@@ -49,8 +48,6 @@ public class CharacterTest {
         System.out.println("Total: " + mage.getTotalPrimaryAttributes());
         }
 
-
-
     public static void TestRanger() {
         System.out.println("Welcome to the test. Would you like to create a Ranger?");
         Continue();
@@ -75,7 +72,6 @@ public class CharacterTest {
         System.out.println("Intelligence: " + ranger.getAttributes()[2]);
         System.out.println("Total: " + ranger.getTotalPrimaryAttributes());
     }
-
 
     public static void TestRogue() {
         System.out.println("Welcome to the test. Would you like to create a rogue?");

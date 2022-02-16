@@ -1,8 +1,10 @@
 package Item;
 
+import PrimaryAttributes.PrimaryAttributes;
+
 public class Armor extends Item{
     // Fields
-    public String primaryAttributesArmor;
+    public int[] primaryAttributesArmor;
     private ArmorType armorType;
     public int totalArmorAttributes;
 
@@ -11,7 +13,8 @@ public class Armor extends Item{
     public Armor(String itemName, int requiredLevel, int level, ArmorType armorType) {
         super(itemName, requiredLevel, level);
         this.armorType = armorType;
-
+        int[] armorInitial = new int[]{0,0,0};
+        initialize(armorInitial);
         putArmorOn();
         checkArmorSlot();
     }
@@ -22,29 +25,37 @@ public class Armor extends Item{
         this.totalArmorAttributes = 5;
     }
 
+    // initialize the PrimaryattributesArmor
+    public void initialize(int[] initial) {
+        PrimaryAttributes obj = new PrimaryAttributes(initial);
+        this.primaryAttributesArmor = getPrimaryAttributesArmor();
+    }
+
     // Check if the name is available and also check if the level of the character is high enough
     public void checkArmorSlot() {
-        if (this.armorType == ArmorType.Cloth || this.armorType == ArmorType.Leather || this.armorType == ArmorType.Mail || this.armorType != ArmorType.Plate) {
-            if (this.armorType == ArmorType.Cloth && this.requiredLevel >= super.level) {
-                InvalidArmorException();
-            }
+        if (this.armorType == ArmorType.Cloth && this.requiredLevel >= super.level) {
+            InvalidArmorException();
+        }
 
-            else if (this.armorType == ArmorType.Leather && this.requiredLevel >= super.level) {
-                InvalidArmorException();
-            }
+        else if (this.armorType == ArmorType.Leather && this.requiredLevel >= super.level) {
+            InvalidArmorException();
+        }
 
-            else if (this.armorType == ArmorType.Mail && this.requiredLevel >= super.level) {
-                InvalidArmorException();
-            }
+        else if (this.armorType == ArmorType.Mail && this.requiredLevel >= super.level) {
+            InvalidArmorException();
+        }
 
-            else {
-                System.out.println("The weapon that you picked is allowed");
-            }
+        else if (this.armorType == ArmorType.Plate && this.requiredLevel >= super.level) {
+            InvalidArmorException();
+        }
+
+        else {
+            System.out.println("The weapon that you picked is allowed");
         }
     }
 
     public void InvalidArmorException(){
-        System.out.println("InvalidWeaponException");
+        System.out.println("InvalidArmorException");
     }
 
 
@@ -52,8 +63,12 @@ public class Armor extends Item{
     public enum ArmorType{Cloth, Leather, Mail, Plate}
 
     // Getters and Setters
-    public String getPrimaryAttributesArmor() {
+    public int[] getPrimaryAttributesArmor() {
         return primaryAttributesArmor;
+    }
+
+    public void setPrimaryAttributesArmor(int[] primaryAttributesArmor) {
+        this.primaryAttributesArmor = primaryAttributesArmor;
     }
 
     public int getTotalArmorAttributes() {
@@ -62,10 +77,6 @@ public class Armor extends Item{
 
     public void setTotalArmorAttributes(int totalArmorAttributes) {
         this.totalArmorAttributes = totalArmorAttributes;
-    }
-
-    public void setPrimaryAttributes(String attributes) {
-        this.primaryAttributesArmor = attributes;
     }
 
     public ArmorType getArmorType() {
