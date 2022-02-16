@@ -7,12 +7,12 @@ public class Weapons extends Item {
     private int damage;
 
     // Constructor
-    public Weapons(String itemName, int requiredLevel, int level, WeaponType wType, int speed) {
+    public Weapons(String itemName, int requiredLevel, int level, WeaponType wType, int speed, int damage) {
         super(itemName, requiredLevel, level);
         this.wType = wType;
         this.speed = speed;
-
-        checkWeaponSlot();
+        this.damage = damage;
+        setWeaponSlot();
     }
 
     // Methods //
@@ -29,7 +29,7 @@ public class Weapons extends Item {
     }
 
     // Check if the name is available and also check if the level of the character is high enough
-    public void checkWeaponSlot() {
+    public void setWeaponSlot() {
         if (this.wType == WeaponType.Axes || this.wType == WeaponType.Bows || this.wType == WeaponType.Daggers || this.wType != WeaponType.Hammers) {
             if (this.wType == WeaponType.Axes && this.requiredLevel > super.level) {
                 InvalidWeaponException();
@@ -56,4 +56,21 @@ public class Weapons extends Item {
 
     // Enumerator to create the different weapontypes
     public enum WeaponType {Axes, Bows, Daggers, Hammers, Staffs, Swords, Wands}
+
+    // Getters and Setters
+    public int getSpeed() {
+        return speed;
+    }
+
+    public void setSpeed(int speed) {
+        this.speed = speed;
+    }
+
+    public int getDamage() {
+        return damage;
+    }
+
+    public void setDamage(int damage) {
+        this.damage = damage;
+    }
 }
