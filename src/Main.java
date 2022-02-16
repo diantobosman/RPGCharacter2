@@ -2,7 +2,6 @@ import Character.*;
 import Item.Armor;
 import Item.Weapons;
 import Item.Weapons.*;
-import java.util.HashMap;
 
 public class Main {
     public static void main(String[] args) {
@@ -20,6 +19,14 @@ public class Main {
         int test = axes.GiveTotalDamage(3, 1, totalAttr);
         System.out.println("TEST: " + totalAttr);
         System.out.println("TEST: " + test);
+
+
+
+
+
+
+
+
 
     }
 }

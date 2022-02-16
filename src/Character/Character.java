@@ -9,7 +9,7 @@ import java.util.Arrays;
 public abstract class Character {
     // Fields
     protected String name;
-    protected int level = 1;
+    protected static int level = 1;
     protected int totalPrimaryAttributes;
     protected int[] primaryAttribute;
     protected HashMap<bodySlot, Item> equipment;
@@ -19,7 +19,7 @@ public abstract class Character {
 
     // Methods //
     public void levelUp() {
-        this.level = level + 1;
+        level = level + 1;
     }
 
     // initialize the Primaryattributes
@@ -35,7 +35,7 @@ public abstract class Character {
     // Get list with properties
     public List<Object> CharacterStatsDisplay() {
         String name = this.name;
-        int characterLevel = this.level;
+        int characterLevel = level;
         int strength = this.primaryAttribute[0];
         int dexterity = this.primaryAttribute[1];
         int intelligence = this.primaryAttribute[2];
@@ -47,12 +47,12 @@ public abstract class Character {
     enum bodySlot {Head, Body, Legs, Weapon}
 
     // Getters and Setters
-    public int getLevel() {
+    public static int getLevel() {
         return level;
     }
 
     public void setLevel(int level) {
-        this.level = level;
+        Character.level = level;
     }
 
     public String getName() {
