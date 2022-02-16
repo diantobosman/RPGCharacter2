@@ -26,9 +26,8 @@ public class Rogue extends Character{
     }
 
     public void EquipArmor() {
-        Item.Armor armor = null;
         if (Armor.getArmorType() == Armor.ArmorType.Leather || Armor.getArmorType() == Armor.ArmorType.Mail) {
-            equipment.put(Slot.BODY, armor);
+            equipment.put(Slot.BODY, Armor.getArmorType());
 
         }
         else{

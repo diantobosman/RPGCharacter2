@@ -26,9 +26,8 @@ public class Warrior extends Character{
     }
 
     public void EquipArmor() {
-        Item.Armor armor = null;
         if (Armor.getArmorType() == Armor.ArmorType.Mail || Armor.getArmorType() == Armor.ArmorType.Plate) {
-            equipment.put(Slot.BODY, armor);
+            equipment.put(Slot.BODY, Armor.getArmorType());
 
         }
         else{
