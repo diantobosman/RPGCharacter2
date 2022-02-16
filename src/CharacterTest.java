@@ -31,7 +31,7 @@ public class CharacterTest {
         System.out.println("Mage created. It had the following properties: ");
 
         System.out.println("Name: " + mage.getName());
-        System.out.println("Level: " + Character.Character.getLevel());
+        System.out.println("Level: " + mage.getLevel());
         System.out.println("Strength: " + mage.getAttributes()[0]);
         System.out.println("Dexterity: " + mage.getAttributes()[1]);
         System.out.println("Intelligence: " + mage.getAttributes()[2]);
@@ -42,7 +42,7 @@ public class CharacterTest {
 
         mage.levelUp();
         System.out.println("Mage leveled up. It had the following properties: ");
-        System.out.println("Level: " + Character.Character.getLevel());
+        System.out.println("Level: " + mage.getLevel());
         System.out.println("Strength: " + mage.getAttributes()[0]);
         System.out.println("Dexterity: " + mage.getAttributes()[1]);
         System.out.println("Intelligence: " + mage.getAttributes()[2]);
@@ -58,7 +58,7 @@ public class CharacterTest {
         System.out.println("Ranger created. It had the following properties: ");
 
         System.out.println("Name: " + ranger.getName());
-        System.out.println("Level: " + Character.Character.getLevel());
+        System.out.println("Level: " + ranger.getLevel());
         System.out.println("Strength: " + ranger.getAttributes()[0]);
         System.out.println("Dexterity: " + ranger.getAttributes()[1]);
         System.out.println("Intelligence: " + ranger.getAttributes()[2]);
@@ -69,7 +69,7 @@ public class CharacterTest {
 
         ranger.levelUp();
         System.out.println("Mage leveled up. It had the following properties: ");
-        System.out.println("Level: " + Character.Character.getLevel());
+        System.out.println("Level: " + ranger.getLevel());
         System.out.println("Strength: " + ranger.getAttributes()[0]);
         System.out.println("Dexterity: " + ranger.getAttributes()[1]);
         System.out.println("Intelligence: " + ranger.getAttributes()[2]);
@@ -84,7 +84,7 @@ public class CharacterTest {
         System.out.println("Rogue created. It had the following properties: ");
 
         System.out.println("Name: " + rogue.getName());
-        System.out.println("Level: " + Character.Character.getLevel());
+        System.out.println("Level: " + rogue.getLevel());
         System.out.println("Strength: " + rogue.getAttributes()[0]);
         System.out.println("Dexterity: " + rogue.getAttributes()[1]);
         System.out.println("Intelligence: " + rogue.getAttributes()[2]);
@@ -95,7 +95,7 @@ public class CharacterTest {
 
         rogue.levelUp();
         System.out.println("Rogue leveled up. It had the following properties: ");
-        System.out.println("Level: " + Character.Character.getLevel());
+        System.out.println("Level: " + rogue.getLevel());
         System.out.println("Strength: " + rogue.getAttributes()[0]);
         System.out.println("Dexterity: " + rogue.getAttributes()[1]);System.out.println("Intelligence: " + rogue.getAttributes()[2]);
         System.out.println("Total: " + rogue.getTotalPrimaryAttributes());
@@ -109,7 +109,7 @@ public class CharacterTest {
         System.out.println("Warrior created. It had the following properties: ");
 
         System.out.println("Name: " + warrior.getName());
-        System.out.println("Level: " + Character.Character.getLevel());
+        System.out.println("Level: " + warrior.getLevel());
         System.out.println("Strength: " + warrior.getAttributes()[0]);
         System.out.println("Dexterity: " + warrior.getAttributes()[1]);
         System.out.println("Intelligence: " + warrior.getAttributes()[2]);
@@ -120,7 +120,7 @@ public class CharacterTest {
 
         warrior.levelUp();
         System.out.println("Warrior leveled up. It had the following properties: ");
-        System.out.println("Level: " + Character.Character.getLevel());
+        System.out.println("Level: " + warrior.getLevel());
         System.out.println("Strength: " + warrior.getAttributes()[0]);
         System.out.println("Dexterity: " + warrior.getAttributes()[1]);
         System.out.println("Intelligence: " + warrior.getAttributes()[2]);
