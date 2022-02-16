@@ -1,5 +1,8 @@
 package Character;
 
+import Item.Armor;
+import Item.Weapons;
+
 public class Warrior extends Character{
 
     public Warrior() {
@@ -7,6 +10,30 @@ public class Warrior extends Character{
         int[] warriorInitial = new int[]{5,2,1};
         initialize(warriorInitial);
         super.totalPrimaryAttributes = 8;
+        EquipWeapon();
+        EquipArmor();
+
+    }
+
+    // Methods
+    public void EquipWeapon() {
+        if (Weapons.getwType() == Weapons.WeaponType.Axes || Weapons.getwType() == Weapons.WeaponType.Hammers || Weapons.getwType() == Weapons.WeaponType.Swords){
+            equipment.put(Slot.WEAPON, Weapons.getwType());
+        }
+        else{
+            System.out.println("InvalidWeaponException");
+        }
+    }
+
+    public void EquipArmor() {
+        Item.Armor armor = null;
+        if (Armor.getArmorType() == Armor.ArmorType.Mail || Armor.getArmorType() == Armor.ArmorType.Plate) {
+            equipment.put(Slot.BODY, armor);
+
+        }
+        else{
+            System.out.println("InvalidArmorException");
+        }
     }
 
     @Override

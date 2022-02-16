@@ -5,19 +5,21 @@ import PrimaryAttributes.PrimaryAttributes;
 public class Armor extends Item{
     // Fields
     public int[] primaryAttributesArmor;
-    private ArmorType armorType;
+    private static ArmorType armorType;
     public int totalArmorAttributes;
 
 
     // Constructor
     public Armor(String itemName, int requiredLevel, int level, ArmorType armorType) {
         super(itemName, requiredLevel, level);
-        this.armorType = armorType;
+        Armor.armorType = armorType;
         int[] armorInitial = new int[]{0,0,0};
         initialize(armorInitial);
         putArmorOn();
         checkArmorSlot();
     }
+
+
 
     // Methods
     public void putArmorOn() {
@@ -33,19 +35,19 @@ public class Armor extends Item{
 
     // Check if the name is available and also check if the level of the character is high enough
     public void checkArmorSlot() {
-        if (this.armorType == ArmorType.Cloth && this.requiredLevel >= super.level) {
+        if (armorType == ArmorType.Cloth && this.requiredLevel >= super.level) {
             InvalidArmorException();
         }
 
-        else if (this.armorType == ArmorType.Leather && this.requiredLevel >= super.level) {
+        else if (armorType == ArmorType.Leather && this.requiredLevel >= super.level) {
             InvalidArmorException();
         }
 
-        else if (this.armorType == ArmorType.Mail && this.requiredLevel >= super.level) {
+        else if (armorType == ArmorType.Mail && this.requiredLevel >= super.level) {
             InvalidArmorException();
         }
 
-        else if (this.armorType == ArmorType.Plate && this.requiredLevel >= super.level) {
+        else if (armorType == ArmorType.Plate && this.requiredLevel >= super.level) {
             InvalidArmorException();
         }
 
@@ -79,11 +81,11 @@ public class Armor extends Item{
         this.totalArmorAttributes = totalArmorAttributes;
     }
 
-    public ArmorType getArmorType() {
+    public static ArmorType getArmorType() {
         return armorType;
     }
 
     public void setArmorType(ArmorType armorType) {
-        this.armorType = armorType;
+        Armor.armorType = armorType;
     }
 }

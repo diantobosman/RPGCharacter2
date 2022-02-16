@@ -3,13 +3,13 @@ import Item.Armor;
 import Item.Weapons;
 import Item.Weapons.*;
 
-import java.util.Arrays;
-
-
 public class ItemEquipmentTest {
     public static void main(String[] args) {
-    WrongTestArmor();
+        TestWeapon();
     }
+
+
+
 
     public static void TestWeapon() {
         // Code automatically checks if the weapon is allowed.

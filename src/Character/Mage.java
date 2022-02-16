@@ -1,12 +1,38 @@
 package Character;
 
+import Item.Armor;
+import Item.Weapons;
+
 public class Mage extends Character {
 
     public Mage() {
         super.name = "Mage";
-        int[] mageInitial = new int[]{1,1,8};
+        int[] mageInitial = new int[]{1, 1, 8};
         initialize(mageInitial);
         super.totalPrimaryAttributes = 10;
+        EquipWeapon();
+        EquipArmor();
+
+    }
+
+    // Methods
+    public void EquipWeapon() {
+        if (Weapons.getwType() == Weapons.WeaponType.Wands || Weapons.getwType() == Weapons.WeaponType.Staffs){
+            equipment.put(Slot.WEAPON, Weapons.getwType());
+        }
+        else{
+            System.out.println("InvalidWeaponException");
+        }
+    }
+
+    public void EquipArmor() {
+        if (Armor.getArmorType() == Armor.ArmorType.Cloth) {
+            equipment.put(Slot.BODY, Armor.getArmorType());
+
+        }
+        else{
+            System.out.println("InvalidArmorException");
+        }
     }
 
     @Override

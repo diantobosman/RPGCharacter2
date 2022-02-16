@@ -1,5 +1,8 @@
 package Character;
 
+import Item.Armor;
+import Item.Weapons;
+
 public class Ranger extends Character{
 
     public Ranger() {
@@ -7,6 +10,29 @@ public class Ranger extends Character{
         int[] rangerInitial = new int[]{1,7,1};
         initialize(rangerInitial);
         super.totalPrimaryAttributes = 9;
+        EquipWeapon();
+        EquipArmor();
+
+    }
+
+    // Methods
+    public void EquipWeapon() {
+        if (Weapons.getwType() == Weapons.WeaponType.Bows){
+            equipment.put(Slot.WEAPON, Weapons.getwType());
+        }
+        else{
+            System.out.println("InvalidWeaponException");
+        }
+    }
+
+    public void EquipArmor() {
+        Item.Armor armor = null;
+        if (Armor.getArmorType() == Armor.ArmorType.Leather || Armor.getArmorType() == Armor.ArmorType.Mail) {
+            equipment.put(Slot.BODY, armor);
+        }
+        else{
+            System.out.println("InvalidArmorException");
+        }
     }
 
     @Override

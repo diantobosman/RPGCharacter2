@@ -2,14 +2,14 @@ package Item;
 
 public class Weapons extends Item {
     // Fields
-    private final WeaponType wType;
+    public static WeaponType wType;
     private int speed;
     private int damage;
 
     // Constructor
     public Weapons(String itemName, int requiredLevel, int level, WeaponType wType, int speed, int damage) {
         super(itemName, requiredLevel, level);
-        this.wType = wType;
+        Weapons.wType = wType;
         this.speed = speed;
         this.damage = damage;
         setWeaponSlot();
@@ -30,22 +30,14 @@ public class Weapons extends Item {
 
     // Check if the name is available and also check if the level of the character is high enough
     public void setWeaponSlot() {
-        if (this.wType == WeaponType.Axes || this.wType == WeaponType.Bows || this.wType == WeaponType.Daggers || this.wType != WeaponType.Hammers) {
-            if (this.wType == WeaponType.Axes && this.requiredLevel > super.level) {
-                InvalidWeaponException();
-            }
-
-            else if (this.wType == WeaponType.Bows && this.requiredLevel > super.level) {
-                InvalidWeaponException();
-            }
-
-            else if (this.wType == WeaponType.Daggers && this.requiredLevel > super.level) {
-                InvalidWeaponException();
-            }
-
-            else {
-                System.out.println("The weapon that you picked is allowed");
-            }
+        if (wType == WeaponType.Axes && this.requiredLevel > super.level) {
+            InvalidWeaponException();
+        } else if (wType == WeaponType.Bows && this.requiredLevel > super.level) {
+            InvalidWeaponException();
+        } else if (wType == WeaponType.Daggers && this.requiredLevel > super.level) {
+            InvalidWeaponException();
+        } else {
+            System.out.println("The weapon that you picked is allowed");
         }
     }
 
@@ -72,5 +64,9 @@ public class Weapons extends Item {
 
     public void setDamage(int damage) {
         this.damage = damage;
+    }
+
+    public static WeaponType getwType() {
+        return wType;
     }
 }

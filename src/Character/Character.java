@@ -1,10 +1,9 @@
 package Character;
 import PrimaryAttributes.PrimaryAttributes;
 import java.util.HashMap;
-import Item.Item;
-
 import java.util.List;
 import java.util.Arrays;
+
 
 public abstract class Character {
     // Fields
@@ -12,11 +11,13 @@ public abstract class Character {
     protected int level;
     protected int totalPrimaryAttributes;
     protected int[] primaryAttribute;
-    protected HashMap<bodySlot, Item> equipment;
+    protected HashMap<Slot, Object> equipment;
 
     public Character() {
         this.level = 1;
+        this.equipment = new HashMap<>();
     }
+
 
     // Methods //
     public void levelUp() {
@@ -70,5 +71,17 @@ public abstract class Character {
 
     public void setTotalPrimaryAttributes(int totalPrimaryAttributes) {
         this.totalPrimaryAttributes = totalPrimaryAttributes;
+    }
+
+    public HashMap<Slot, Object> getEquipment() {
+        return equipment;
+    }
+
+    public void setEquipment(HashMap<Slot, Object> equipment) {
+        this.equipment = equipment;
+    }
+
+    public enum Slot {
+        HEAD, BODY, ARMS, LEGS, WEAPON
     }
 }
