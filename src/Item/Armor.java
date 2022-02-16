@@ -13,7 +13,7 @@ public class Armor extends Item{
     public Armor(String itemName, int requiredLevel, int level, ArmorType armorType) {
         super(itemName, requiredLevel, level);
         Armor.armorType = armorType;
-        int[] armorInitial = new int[]{0,0,0};
+        int[] armorInitial = new int[]{2,2,4};
         initialize(armorInitial);
         putArmorOn();
         checkArmorSlot();
@@ -52,7 +52,7 @@ public class Armor extends Item{
         }
 
         else {
-            System.out.println("The weapon that you picked is allowed");
+            System.out.println("The Armor that you picked is allowed");
         }
     }
 

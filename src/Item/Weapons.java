@@ -3,11 +3,11 @@ package Item;
 public class Weapons extends Item {
     // Fields
     public static WeaponType wType;
-    private int speed;
-    private int damage;
+    private double speed;
+    private double damage;
 
     // Constructor
-    public Weapons(String itemName, int requiredLevel, int level, WeaponType wType, int speed, int damage) {
+    public Weapons(String itemName, int requiredLevel, int level, WeaponType wType, double speed, double damage) {
         super(itemName, requiredLevel, level);
         Weapons.wType = wType;
         this.speed = speed;
@@ -17,14 +17,15 @@ public class Weapons extends Item {
 
     // Methods //
     // Calculate the total damage
-    public int GiveTotalDamage(int speed, int damage, int totalAttributes) {
+    public double GiveTotalDamage(double speed, double damage, double totalAttributes) {
         this.speed = speed;
         this.damage = damage;
-        int DPS = GiveDamage(this.speed, this.damage);
-        return DPS * (1 + totalAttributes/100);
+        double DPS = GiveDamage(this.speed, this.damage);
+        System.out.println("TESTY" + totalAttributes);
+        return (DPS * (1 + totalAttributes/100));
     }
 
-    public int GiveDamage(int speed, int damage) {
+    public double GiveDamage(double speed, double damage) {
         return this.damage * this.speed;
     }
 
@@ -36,8 +37,9 @@ public class Weapons extends Item {
             InvalidWeaponException();
         } else if (wType == WeaponType.Daggers && this.requiredLevel > super.level) {
             InvalidWeaponException();
-        } else {
-            System.out.println("The weapon that you picked is allowed");
+        }
+        else {
+            System.out.println("The Weapon that you picked is allowed");
         }
     }
 
@@ -50,19 +52,15 @@ public class Weapons extends Item {
     public enum WeaponType {Axes, Bows, Daggers, Hammers, Staffs, Swords, Wands}
 
     // Getters and Setters
-    public int getSpeed() {
-        return speed;
+    public double getSpeed() {
+        return this.speed;
     }
 
-    public void setSpeed(int speed) {
-        this.speed = speed;
-    }
-
-    public int getDamage() {
+    public double getDamage() {
         return damage;
     }
 
-    public void setDamage(int damage) {
+    public void setDamage(double damage) {
         this.damage = damage;
     }
 

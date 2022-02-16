@@ -16,23 +16,27 @@ public class Rogue extends Character{
     }
 
     // Methods
-    public void EquipWeapon() {
+    public boolean EquipWeapon() {
         if (Weapons.getwType() == Weapons.WeaponType.Daggers || Weapons.getwType() == Weapons.WeaponType.Swords){
             equipment.put(Slot.WEAPON, Weapons.getwType());
+            return true;
         }
         else{
             System.out.println("InvalidWeaponException");
         }
+        return false;
     }
 
-    public void EquipArmor() {
+    public boolean EquipArmor() {
         if (Armor.getArmorType() == Armor.ArmorType.Leather || Armor.getArmorType() == Armor.ArmorType.Mail) {
             equipment.put(Slot.BODY, Armor.getArmorType());
+            return true;
 
         }
         else{
             System.out.println("InvalidArmorException");
         }
+        return false;
     }
 
     @Override
